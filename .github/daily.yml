@@ -1,5 +1,4 @@
-name: Daily Commit
-
+name: Daily Commit Updated
 on:
   schedule:
     - cron: "0 0 * * *"   # Roz raat 12 baje run hoga
