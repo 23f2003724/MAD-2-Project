@@ -1,0 +1,569 @@
+Perfect. This is a **very mature, developer-level request** 👍
+What you’re asking for is basically a **PROJECT CONTEXT SNAPSHOT** — exactly what real teams keep in README / Notion.
+
+Below is a **complete, self-contained thread**.
+You can **save this**, **paste it anytime**, or **show it in viva**.
+
+---
+
+# 📌 PLACEMENT PORTAL APPLICATION (PPA) — PROJECT CONTEXT THREAD
+
+## 1️⃣ Why we started this project
+
+You have a **college MAD-2 project** with a **15-day deadline**.
+
+The problem:
+Institutes struggle to manage placement activities using spreadsheets and emails.
+
+The task:
+👉 Build a **Placement Portal Web Application** where:
+
+* Admin (Institute)
+* Companies
+* Students
+  can interact based on roles.
+
+Goal:
+✔ Show understanding of **system design**
+✔ Use **only allowed tech**
+✔ Implement **core workflows**
+✔ Run everything **locally**
+
+---
+
+## 2️⃣ What exactly your project is
+
+You are building a **Placement Portal Application (PPA)** similar in **flow** (not UI) to:
+
+* Internshala
+* Indeed
+* AngelList
+
+The portal allows:
+
+* Companies to create placement drives
+* Students to apply
+* Admin to approve and manage everything
+
+This is **NOT** a production system.
+It is an **academic, functional prototype**.
+
+---
+
+## 3️⃣ Allowed technologies (VERY IMPORTANT)
+
+You are allowed to use **ONLY** these:
+
+### Backend
+
+* Flask (API)
+* SQLite (database)
+* SQLAlchemy
+* Flask-Login / Sessions
+* Redis (caching)
+* Celery (background jobs)
+
+### Frontend
+
+* VueJS (UI)
+* Bootstrap (ONLY CSS framework)
+* Jinja2 → only as entry point (not UI)
+
+### Rules
+
+❌ No Django
+❌ No React
+❌ No MongoDB / MySQL
+❌ No Tailwind
+❌ No manual DB creation
+
+---
+
+## 4️⃣ What is MANDATORY vs OPTIONAL
+
+### 🔴 MANDATORY (must exist)
+
+#### Core
+
+* Admin, Company, Student roles
+* Login system
+* Role-based access
+* Programmatic DB creation
+* Programmatic admin creation (NO admin signup)
+* Placement drives
+* Student applications
+* Prevent duplicate applications
+* Eligibility validation
+* Admin approvals
+* Search functionality
+* Placement history
+
+#### Backend Jobs
+
+* Daily reminder job
+* Monthly admin report job
+* CSV export (async)
+
+If these exist (even simply) → **you pass**.
+
+---
+
+### 🟡 OPTIONAL (good but not required)
+
+* PDF reports
+* Charts (ChartJS)
+* Resume checker
+* Offer letter generator
+* Mobile-first UI
+* Fancy Vue architecture
+
+These are **bonus only**.
+
+---
+
+## 5️⃣ What is NOT required (important relief 😌)
+
+❌ Perfect UI
+❌ Complex Vue state management
+❌ Real email/SMS gateways
+❌ 100% optimized performance
+❌ Production-grade security
+
+Console logs + dummy email = acceptable **if documented**.
+
+---
+6️⃣ Where we reached till now (DAY-1 + DAY-2 + DAY-3 STATUS)
+✅ COMPLETED
+🔹 Day-1 — Project Setup
+
+Project structure created
+
+Virtual environment configured correctly
+
+Flask app running successfully
+
+SQLite database created programmatically
+
+Tables created using SQLAlchemy
+
+Admin user auto-created (no admin signup)
+
+Circular import issue resolved using extensions.py
+
+Correct app execution flow understood (cd Backend → python app.py)
+
+Debugging issues related to multiple venvs and file confusion resolved
+
+🔹 Day-2 — Authentication & Roles
+
+Single User table for all roles (admin / student / company)
+
+Login system implemented (email + password)
+
+Password hashing using generate_password_hash and check_password_hash
+
+Session-based authentication implemented
+
+Role-based redirection after login:
+
+Admin → /admin
+
+Student → /student
+
+Company → /company
+
+Role-based route protection implemented
+
+Unauthorized access handling added
+
+Logout functionality implemented
+
+Flask auto-reload behavior (debug mode) understood
+
+🔹 Day-3 — Student Module ✅
+
+Student registration implemented using unified User model
+
+Student dashboard implemented
+
+Correct handling of GET/POST requests
+
+Session-protected student routes
+
+Role-based redirection verified
+
+Student login successfully opens Student Dashboard
+
+🎯 Student authentication + dashboard flow is fully working
+
+📁 Current Backend Structure
+Backend/
+├── app.py          → Flask entry point, routes, auth logic
+├── models.py       → User model + admin creation logic
+├── extensions.py   → shared SQLAlchemy db instance
+├── templates/
+│   ├── login.html
+│   └── student_dashboard.html
+    └── student_register.html
+├── instance/
+│   └── database.db
+
+7️⃣ What is left to cover (Big Picture — UPDATED)
+🔜 Core Modules
+
+Company registration & approval
+
+Company dashboard & drive creation
+
+Admin approvals & management workflows
+
+Placement drives & applications
+
+Eligibility validation
+
+Prevent duplicate applications
+
+Placement history tracking
+
+🔜 Advanced (MAD-2 Required)
+
+Search functionality
+
+Redis caching (dashboard/search)
+
+Celery background jobs:
+
+Daily reminders
+
+Monthly admin report
+
+Async CSV export
+
+🔜 Frontend & Submission
+
+VueJS integration (via CDN)
+
+Role-based dashboards in Vue
+
+Bootstrap styling
+
+Project report (ER diagram, APIs, architecture)
+
+Demo video
+
+8️⃣ DAY-WISE PLAN (DAY-3 → DAY-15)
+
+(unchanged roadmap — already approved)
+
+✅ Day-3 officially CLOSED
+---
+
+### 🗓️ DAY-4 — Company Module
+
+* Company registration
+* Admin approval
+* Create placement drives
+* View applicants
+* Update application status
+
+🎯 Output: Company → Drive → Student flow works
+
+---
+🗓️ DAY-4 — Company Module (FOUNDATION DAY)
+🎯 Goal
+
+Enable companies to exist in the system and create drives (with admin control).
+
+What you will do
+
+Company registration (role = company)
+
+Company login using same login system
+
+Company dashboard page
+
+Create placement drive (basic fields)
+
+Save drive in DB (unapproved by default)
+
+Deliverable
+
+✔ Company can register
+✔ Company can log in
+✔ Company can create a drive
+✔ Drive is not visible to students yet
+
+🗓️ DAY-5 — Admin Control (VERY IMPORTANT FOR VIVA)
+🎯 Goal
+
+Give admin full control over companies and drives.
+
+What you will do
+
+Admin dashboard
+
+View pending companies
+
+Approve / reject companies
+
+View pending drives
+
+Approve / reject drives
+
+Deactivate users (optional flag)
+
+Deliverable
+
+✔ Admin controls the system
+✔ Clear separation of power
+✔ Evaluators love this day
+
+🗓️ DAY-6 — Student ↔ Drive Interaction
+🎯 Goal
+
+Complete the core placement workflow.
+
+What you will do
+
+Show only approved drives to students
+
+Student applies to a drive
+
+Store application in DB
+
+Prevent duplicate applications
+
+Basic eligibility check (simple logic)
+
+Deliverable
+
+✔ End-to-end placement flow works
+✔ Student → Drive → Application
+
+🗓️ DAY-7 — Placement History & Status
+🎯 Goal
+
+Track outcomes (this makes it feel “real”).
+
+What you will do
+
+Application status (applied / shortlisted / selected / rejected)
+
+Company updates application status
+
+Student views application history
+
+Admin views all placements
+
+Deliverable
+
+✔ Placement lifecycle complete
+✔ Strong academic depth
+
+🗓️ DAY-8 — VueJS Basics (UI STARTS)
+🎯 Goal
+
+Show frontend knowledge without overengineering.
+
+What you will do
+
+Vue via CDN (NO build tools)
+
+Fetch data from Flask APIs
+
+Display tables using Vue
+
+Use Bootstrap for layout
+
+Deliverable
+
+✔ Vue is integrated
+✔ Clean UI
+✔ Evaluator satisfied
+
+🗓️ DAY-9 — Vue Dashboards (POLISH)
+🎯 Goal
+
+Role-based dashboards in Vue.
+
+What you will do
+
+Student dashboard in Vue
+
+Company dashboard in Vue
+
+Admin dashboard in Vue
+
+Conditional rendering by role
+
+Deliverable
+
+✔ Unified UI
+✔ Professional feel
+
+🗓️ DAY-10 — Redis Caching
+🎯 Goal
+
+Demonstrate performance optimization knowledge.
+
+What you will do
+
+Cache dashboards
+
+Cache drive listings
+
+Set expiration time
+
+Explain caching in report
+
+Deliverable
+
+✔ Redis implemented
+✔ Easy viva questions answered
+
+🗓️ DAY-11 — Celery Setup
+🎯 Goal
+
+Background jobs working locally.
+
+What you will do
+
+Setup Redis + Celery
+
+Create Celery worker
+
+Run async task
+
+Explain async concept
+
+Deliverable
+
+✔ Celery runs
+✔ Huge academic boost
+
+🗓️ DAY-12 — Required Background Jobs
+🎯 Goal
+
+Finish all mandatory MAD-2 jobs.
+
+What you will do
+
+Daily reminder task
+
+Monthly admin report task
+
+Async CSV export of placements
+
+Deliverable
+
+✔ All required jobs implemented
+✔ You are SAFE for evaluation
+
+🗓️ DAY-13 — Bug Fixing & Edge Cases
+🎯 Goal
+
+Stability.
+
+What you will do
+
+Fix broken flows
+
+Handle invalid access
+
+Improve error messages
+
+Clean code structure
+
+Deliverable
+
+✔ Stable system
+✔ No embarrassing demo crashes
+
+🗓️ DAY-14 — Project Report (DO NOT RUSH)
+🎯 Goal
+
+Score marks on paper.
+
+What you will do
+
+ER diagram
+
+Architecture diagram
+
+API list
+
+Feature explanation
+
+AI usage declaration
+
+Deliverable
+
+✔ Submission-ready report
+
+🗓️ DAY-15 — Demo & Final Check
+🎯 Goal
+
+CONFIDENT submission.
+
+What you will do
+
+Record demo video
+
+Final testing
+
+Backup project
+
+README cleanup
+
+Deliverable
+
+✔ Calm mind
+✔ Confident demo
+✔ Project DONE 💪
+
+🔑 GOLDEN RULE (IMPORTANT)
+
+If core flow works, everything else is bonus.
+
+Core flow =
+Admin → Company → Drive → Student → Application → Status
+
+You are ON TRACK.
+You are NOT late.
+You are NOT failing.
+
+## 9️⃣ MOST IMPORTANT THING TO REMEMBER
+
+You are **not expected to master everything**.
+
+You are expected to show:
+
+* Logical thinking
+* Clean flow
+* Honest effort
+* Working system
+
+You are doing EXACTLY that.
+
+---
+
+## 🔐 Save This
+
+I strongly recommend:
+
+* Copy this into `README_PROJECT.md`
+* Or save it in notes
+
+If you ever feel lost, just paste:
+
+> “Here is my project context…”
+
+And we continue smoothly.
+
+---
+
+Whenever you’re ready, send:
+
+> **Day-2 start: Login system**
+
+We’re building this together, step by step 🤝
